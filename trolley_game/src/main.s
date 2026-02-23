@@ -70,11 +70,11 @@ ClearNT:
     bne ClearNT
 
     ; Init Variables
-    lda #128
+    lda #$80
     sta TrainX
-    lda #200
+    lda #$C8
     sta TrainY
-    lda #0
+    lda #$00
     sta ScrollY
     sta FrameCount
     sta NmiReady
@@ -89,7 +89,7 @@ GameLoop:
     ; Wait for NMI
     lda NmiReady
     beq GameLoop
-    lda #0
+    lda #$00
     sta NmiReady
 
     ; --- Logic ---
@@ -151,7 +151,7 @@ NMI:
     sta PPUMASK
 
     inc FrameCount
-    lda #1
+    lda #$01
     sta NmiReady
 
     pla

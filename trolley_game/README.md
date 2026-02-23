@@ -7,31 +7,20 @@ You control a train on tracks with many branches.
 Avoid robots and holes!
 Use Left/Right to switch tracks at junctions.
 
-## Development Environment
-This project uses the **cc65** toolchain.
+## Building (Python)
+This project now uses a custom Python-based build script that leverages `py65`.
 
-### Prerequisites
-1.  **cc65**: Install via your package manager.
-    -   Ubuntu/Debian: `sudo apt install cc65`
-    -   macOS: `brew install cc65`
-    -   Windows: Download from https://cc65.github.io/
+1. Run the build script:
+   ```bash
+   ./build.sh
+   ```
 
-### Building
-Run the build script:
-```bash
-./build.sh
-```
-This will generate `trolley.nes`.
+   This will run `tools/build_rom.py` and generate `trolley.nes`.
 
-### Running
-Open `trolley.nes` in any NES emulator (FCEUX, Mesen, Nestopia).
+## Building (Source)
+- `src/main.s`: Main game logic (6502 assembly).
+- `src/reset.s`: Initialization code.
+- `assets/trolley.chr`: Graphics.
 
-## Controls
--   **Left/Right**: Move Train
--   **A/B**: Action (Planned)
-
-## Project Structure
--   `src/`: Assembly source code (.s)
--   `assets/`: Graphics (.chr)
--   `cfg/`: Linker configuration (.cfg)
--   `tools/`: Asset generation scripts (.py)
+## Note
+The build system was switched to Python to ensure compatibility where cc65 is not available.
