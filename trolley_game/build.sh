@@ -7,5 +7,6 @@ fi
 ca65 src/header.s -o obj/header.o || exit 1
 ca65 src/reset.s -o obj/reset.o -I src || exit 1
 ca65 src/main.s -o obj/main.o -I src || exit 1
-ld65 -C cfg/nrom.cfg -o trolley.nes obj/header.o obj/reset.o obj/main.o || exit 1
+ca65 src/chars.s -o obj/chars.o -I src || exit 1
+ld65 -C cfg/nrom.cfg -o trolley.nes obj/header.o obj/reset.o obj/main.o obj/chars.o || exit 1
 echo "Build success! trolley.nes created."
