@@ -1,0 +1,19 @@
+PPUCTRL   = $2000
+PPUMASK   = $2001
+PPUSTATUS = $2002
+OAMADDR   = $2003
+OAMDATA   = $2004
+PPUSCROLL = $2005
+PPUADDR   = $2006
+PPUDATA   = $2007
+
+APUCTRL   = $4015
+JOY1      = $4016
+JOY2      = $4017
+
+; Colors
+BLACK     = $0F
+WHITE     = $30
+RED       = $06
+BLUE      = $01
+CYAN      = $2C
